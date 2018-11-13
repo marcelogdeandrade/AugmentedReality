@@ -23,7 +23,7 @@ def get_points(ids_or, ids_dest, corners_or, corners_dest):
     origin = np.array(origin).reshape(new_shape).astype(int)
     return (origin, dest)
 
-def wrap_image(origin, dest, shape, image):
+def warp_image(origin, dest, shape, image):
     homography = cv2.findHomography(origin, dest)[0]
     dst = cv2.warpPerspective(image, homography, dsize=(shape[1], shape[0]))
     return dst

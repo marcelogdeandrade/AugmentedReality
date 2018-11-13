@@ -14,7 +14,7 @@ while(True):
     corners_dest, ids_dest = utils.detect_markers(frame)
     if len(corners_dest) > 0: 
         origin, dest = utils.get_points(ids_or, ids_dest, corners_or, corners_dest)
-        warped_img = utils.wrap_image(origin, dest, (frame.shape[0], frame.shape[1]), foto)
+        warped_img = utils.warp_image(origin, dest, (frame.shape[0], frame.shape[1]), foto)
         frame = utils.merge_images(warped_img, frame)
     cv2.namedWindow('frame',cv2.WINDOW_NORMAL)
     cv2.resizeWindow('frame', 1920,1080)
